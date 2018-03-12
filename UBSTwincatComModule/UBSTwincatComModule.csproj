@@ -43,15 +43,30 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TwinCAT.Ads, Version=2.0.8.0, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\TwinCAT.Ads.dll</HintPath>
+    </Reference>
+    <Reference Include="UBSLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\UBSLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Clases\IO_Parameter.cs" />
+    <Compile Include="Clases\IO_Parameters.cs" />
+    <Compile Include="Clases\TCBlock.cs" />
+    <Compile Include="Clases\TwincatCom.cs" />
+    <Compile Include="Clases\TwincatConfig.cs" />
+    <Compile Include="Clases\TwincatVariable.cs" />
+    <Compile Include="Vista\TwincatComForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vista\TwincatComForm.Designer.cs">
+      <DependentUpon>TwincatComForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Modulo\UBSTwincatComModule.cs" />
+    <Compile Include="Modulo\UBSTwincatComModuleSpecific.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -62,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vista\TwincatComForm.resx">
+      <DependentUpon>TwincatComForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,5 +93,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\TwinCAT.Ads.dll" />
+    <Content Include="Lib\UBSLib.dll" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
